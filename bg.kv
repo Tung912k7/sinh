@@ -1,7 +1,32 @@
-<Background>
-	canvas.before:
-		Color:
-			rgba: (255,255,255,1)
-		Rectangle:
-			pos: self.pos
-			size: self.size
+<MyLayout>
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		#padding: 50
+		#spacing: 20
+
+		Image:
+			source: 'logo3.png'
+			allow_stretch: False
+			keep_ratio: True
+        Button:
+            text: "Btn1"
+            background_color: 5, 2, 13, 1
+            font_size: 20
+
+        Button:
+            text: "Btn2"
+            background_color: 6, 2, 0.8, 1
+            font_size: 20
+
+        Button:
+            text: "Btn3"
+            background_color: 0, 255, 255, 1
+            font_size: 20
+
+        Button:
+            text: "Btn4"
+            background_color: 255, 0.3, 0.9, 1
+            font_size: 20
