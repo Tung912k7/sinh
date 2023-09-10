@@ -1,0 +1,88 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+
+<MainWindow>:
+    name: "main"
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		#padding: 50
+		#spacing: 20
+
+		Image:
+			source: 'logo3.png'
+			allow_stretch: False
+			keep_ratio: True
+
+	    Button:
+            text: "Btn1"
+            background_color: 5, 2, 13, 1
+            font_size: 20
+            on_release:
+				app.root.current = "second"
+				root.manager.transition.direction = "left"
+        Button:
+            text: "Btn2"
+            background_color: 6, 2, 0.8, 1
+            font_size: 20
+            on_release:
+				app.root.current = "Third"
+				root.manager.transition.direction = "left"
+        Button:
+            text: "Btn3"
+            background_color: 0, 255, 255, 1
+            font_size: 20
+            on_release:
+                app.root.current = "Fourth"
+				root.manager.transition.direction = "left"
+        Button:
+            text: "Btn4"
+            background_color: 255, 0.3, 0.9, 1
+            font_size: 20
+            on_release:
+                app.root.current = "Fifth"
+				root.manager.transition.direction = "left"
+
+
+
+<SecondWindow>:
+    name: "second"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+<ThirdWindow>:
+    name: "Third"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "second"
+            root.manager.transition.direction = "right"
+
+<FourthWindow>:
+    name: "Fourth"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "Third"
+            root.manager.transition.direction = "right"
+
+<FifthWindow>:
+    name: "Fifth"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
