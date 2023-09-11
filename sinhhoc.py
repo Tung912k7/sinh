@@ -6,22 +6,25 @@ from kivy.utils import platform
 from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.widget import Widget
+from kivy.uix.label import Label
 
 
 Config.set('graphics', 'resizable', True)
 
 class MainWindow(Screen):
     pass
-
-class SecondWindow(Screen):
+class SecondWindow(Screen, Widget):
+    pass
+class Second1Window(Screen):
+    pass
+class Second2Window(Screen):
     pass
 class ThirdWindow(Screen):
     pass
-class FourthWindow(Screen):
-        pass
-class FifthWindow(Screen):
+class Third1Window(Screen):
     pass
-
+class Third2Window(Screen):
+    pass
 class WindowManager(ScreenManager):
     pass
 
