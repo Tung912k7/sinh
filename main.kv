@@ -1,9 +1,11 @@
 WindowManager:
     MainWindow:
     SecondWindow:
+    Second1Window:
+    Second2Window:
     ThirdWindow:
-    FourthWindow:
-    FifthWindow:
+    Third1Window:
+    Third2Window:
 
 <MainWindow>:
     name: "main"
@@ -21,68 +23,176 @@ WindowManager:
 			keep_ratio: True
 
 	    Button:
-            text: "Btn1"
+            text: "Khái quát"
             background_color: 5, 2, 13, 1
             font_size: 20
             on_release:
 				app.root.current = "second"
 				root.manager.transition.direction = "left"
         Button:
-            text: "Btn2"
+            text: "Quá trình"
             background_color: 6, 2, 0.8, 1
             font_size: 20
             on_release:
-				app.root.current = "Third"
+				app.root.current = "third"
 				root.manager.transition.direction = "left"
         Button:
-            text: "Btn3"
+            text: "Vai trò"
             background_color: 0, 255, 255, 1
             font_size: 20
             on_release:
-                app.root.current = "Fourth"
+                app.root.current = "second"
 				root.manager.transition.direction = "left"
         Button:
-            text: "Btn4"
+            text: "Các yếu tố ảnh hưởng"
             background_color: 255, 0.3, 0.9, 1
             font_size: 20
             on_release:
-                app.root.current = "Fifth"
+                app.root.current = "second"
 				root.manager.transition.direction = "left"
-
 
 
 <SecondWindow>:
     name: "second"
 
-    Button:
-        text: "Go Back"
-        on_release:
-            app.root.current = "main"
-            root.manager.transition.direction = "right"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Button:
+            text: "Khái quát"
+            on_release:
+                app.root.current = "second1"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Hệ sắc tố quang hợp"
+            on_release:
+                app.root.current = "second2"
+                root.manager.transition.direction = "right"
+
+
+<Second1Window>:
+    name: "second1"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        Label:
+            id: second1_label 
+            text: "- Là quá trình lục lại hấp thụ và sử dụng năng lượng ánh sáng để chuyển hoá CO2 và H2O thành C6H12O6 (Chất hữu cơ), đồng thời giải phóng O2.(NLAS --> NLHH) \n- 6CO2 + 12H2O ---NLAS | Lục lạp---> C6H12O6 + 6H2O"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Hệ sắc tố quang hợp"
+            on_release:
+                app.root.current = "second2"
+                root.manager.transition.direction = "right"
+
+<Second2Window>:
+    name: "second2"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: second2_label 
+            text: "- Quá trình quang hợp ở thực vật diễn ra chủ yếu ở lục lạp (màu xanh lá). \n- Trung bình mỗi tế bào mô giậu có khoảng 30 – 40 lục lạp, kích thước của lục lạp khoảng 2 – 4 μm x 4 – 7 μm.\n- Hệ sắc tố quang hợp là trung tâm quá trình quang hợp gồm diệp lục a và b (chlorophyll a và b) và carotenoid.\n- Diệp lục a và b chủ yếu hấp thụ ánh sáng ở vùng màu đỏ & xanh tím.\n- Carotenoid thường hấp thụ ánh sáng màu xanh tím và xanh lục."
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Quay về"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+
 
 <ThirdWindow>:
-    name: "Third"
+    name: "third"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
 
-    Button:
-        text: "Go Back"
-        on_release:
-            app.root.current = "second"
-            root.manager.transition.direction = "right"
+        padding: 100
+        spacing: 80
 
-<FourthWindow>:
-    name: "Fourth"
+        Button:
+            text: "Pha sáng (Hấp thụ năng lượng ánh sáng)"
+            #size_hint: 0.2,0.2
+            #pos_hint: {"x":0.4, "bottom":1}
+            on_release:
+                app.root.current = "third1"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Pha đồng hóa CO2"
+            on_release:
+                app.root.current = "third2"
+                root.manager.transition.direction = "right"
 
-    Button:
-        text: "Go Back"
-        on_release:
-            app.root.current = "Third"
-            root.manager.transition.direction = "right"
+<Third1Window>:
+    name: "third1"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
 
-<FifthWindow>:
-    name: "Fifth"
+        padding: 30
+        spacing: 80
 
-    Button:
-        text: "Go Back"
-        on_release:
-            app.root.current = "main"
-            root.manager.transition.direction = "right"
+        Label:
+            id: main1_label 
+            text: "Pha sáng(Hấp thụ năng lượng ánh sáng)"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Pha đồng hóa CO2"
+            on_release:
+                app.root.current = "third2"
+                root.manager.transition.direction = "right"
+
+<Third2Window>:
+    name: "third2"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: third_label 
+            text: "Pha đồng hóa CO2"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
