@@ -6,9 +6,6 @@ jobs:
     name: Build for Android
     runs-on: ubuntu-latest
     steps:
-      - name: Buildozer action
-        uses: ArtemSBulgakov/buildozer-action@v1.1.3
-            
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build with Buildozer
