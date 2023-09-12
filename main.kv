@@ -1,11 +1,27 @@
 WindowManager:
     MainWindow:
+    
     SecondWindow:
     Second1Window:
     Second2Window:
+    
     ThirdWindow:
     Third1Window:
     Third2Window:
+    Third11Window
+    Third12Window
+    Third13Window
+    
+    FourthWindow:
+    Fourth1Window:
+    Fourth2Window:
+    Fourth3Window:
+
+    FifthWindow:
+    Fifth1Window:
+    Fifth2Window:
+    Fifth3Window:
+    Fifth4Window:
 
 <MainWindow>:
     name: "main"
@@ -27,29 +43,29 @@ WindowManager:
             background_color: 5, 2, 13, 1
             font_size: 20
             on_release:
-		app.root.current = "second"
-		root.manager.transition.direction = "left"
+				app.root.current = "second"
+				root.manager.transition.direction = "left"
         Button:
             text: "Quá trình"
             background_color: 6, 2, 0.8, 1
             font_size: 20
             on_release:
-		app.root.current = "third"
-		root.manager.transition.direction = "left"
+				app.root.current = "third"
+				root.manager.transition.direction = "left"
         Button:
             text: "Vai trò"
             background_color: 0, 255, 255, 1
             font_size: 20
             on_release:
-                app.root.current = "second"
+                app.root.current = "fourth"
 				root.manager.transition.direction = "left"
         Button:
             text: "Các yếu tố ảnh hưởng"
             background_color: 255, 0.3, 0.9, 1
             font_size: 20
             on_release:
-                app.root.current = "second"
-		root.manager.transition.direction = "left"
+                app.root.current = "fifth"
+				root.manager.transition.direction = "left"
 
 
 <SecondWindow>:
@@ -158,7 +174,7 @@ WindowManager:
 
         Label:
             id: main1_label 
-            text: "Pha sáng(Hấp thụ năng lượng ánh sáng)"
+            text: "- Diễn tra trên màng thylakoid \n- Các sắc tố quang hợp hấp thu năng lượng ánh sáng và truyền năng lượng đó cho phân tử diệp lục a ở trung tâm phản ứng theo sơ đồ: \nCarotenoid --> Diệp lục b --> Diệp lục a --> Diệp lục a ở trung tâm phản ứng \n- Phân tử diệp lục a ở trung tâm phản ứng nhận năng lượng ánh sáng --> Dạng kích thích & truyền electron cho các chất trong chuỗi truyền electron --> NADP+ là chất nhận cuối cùng --> NADPH\n -Tổng hợp ATP từ năng lượng được giải phóng từ chuỗi truyền electron."
             font_size: 20
             # Text Properties
             color: (0,0,0,1)
@@ -174,16 +190,114 @@ WindowManager:
 
 <Third2Window>:
     name: "third2"
+    
     BoxLayout:
         orientation: "vertical"
         size: root.width, root.height
 
-        padding: 100
-        spacing: 80
+        padding: 20
+        spacing: 40
 
         Label:
             id: third_label 
-            text: "Pha đồng hóa CO2"
+            text: "- Diễn ra ở chất nền lục lạp theo phương trình tổng quát\n 6CO2 + 12NADPH + 18 ATP --> C6H12O6 + 18ADP + 18Pi + 12NADP+ \n - Thực hiên theo các chu trình khác nhau ở 3 nhóm thực vật gồm:" 
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Thực vật C3"
+            on_release:
+                app.root.current = "third11"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Thực vật C4"
+            on_release:
+                app.root.current = "third12"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Thực vật CAM"
+            on_release:
+                app.root.current = "third13"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+
+<Third11Window>:
+    name: "third11"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        Label:
+            id: fourth1_label 
+            text: "Thực vật C3\n - Là nhóm thực vật gồm phần lớn các loại thực vật phân bố rộng trên thế giới.\n - Là nhóm thực vật cố định CO2 theo chu trình Calvin, sản phẩm ổn định của chu trình là hợp nhất 3 carbonnên được gọi là thực vật C3.\n - Ví dụ: Lúa, khoai tây, đậu và nhiều loại rau có nguồn gốc nhiệt đới"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Thực vật C4"
+            on_release:
+                app.root.current = "third12"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+<Third12Window>:
+    name: "third12"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 20
+        spacing: 10
+
+        Label:
+            id: fourth1_label 
+            text: "Thực vật C4\n- Nhóm thực vật sống ở vùng nhiệt đới và cận nhiệt đới.\n- Sống trong điều kiện khô và nóng.\n- Đóng 1 phần khí khổng để hạn chế mất nước, làm giảm lượng CO2 trong tế bào thịt lá.\n- Thích nghi với môi trường hàm lượng CO2 thấp bằng cố định CO2 theo 2 giai đoạn với sự tham gia của 2 loại tế bào khác nhau.\n- Tế bào thịt lá, CO2 được cố định bởi hợp chất phophoenolpyruvate --> oxaloacetate (4C) --> malate --> Tế bào bao bó mạch --> pyruvate và giải phóng CO2 --> Được cố định và chuyển hóa --> Chất hữu cơ theo chu trình Calvin"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Thực vật CAM"
+            on_release:
+                app.root.current = "third13"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+<Third13Window>:
+    name: "third13"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        Label:
+            id: fourth1_label 
+            text: "Thực vật CAM\n - Là những thực vật mọng nước sống ở vùng sa mạc.\n - Khí khổng đóng vào ban ngày, ban đêm mở để tránh mất nước do quá trình thoát hơi nước. \n ==> Không lấy CO2 vào ban ngày\n - Quá trình cố định giống thực vật C4, nhưng diễn ra trên cùng 1 tế bào ở thời điểm khác nhau. \n - Ban đêm hình thành oxaloacetate, tổng hợp chất hữu cơ vào ban ngày.\n - Ví dụ: Xương rồng, dứa, thanh lòng, ..."
             font_size: 20
             # Text Properties
             color: (0,0,0,1)
@@ -195,4 +309,237 @@ WindowManager:
             text: "Trang chủ"
             on_release:
                 app.root.current = "main"
+                root.manager.transition.direction = "left"
+
+<FourthWindow>:
+    name: "fourth"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Button:
+            text: "Đối với thực vật"
+            on_release:
+                app.root.current = "fourth1"
                 root.manager.transition.direction = "right"
+        Button:
+            text: "Đối với sinh vật"
+            on_release:
+                app.root.current = "fourth2"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Đối với sinh quyển"
+            on_release:
+                app.root.current = "fourth3"
+                root.manager.transition.direction = "right"
+
+<Fourth1Window>:
+    name: "fourth1"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        Label:
+            id: fourth1_label 
+            text: "Đối với thực vật"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Đối với sinh vật"
+            on_release:
+                app.root.current = "fourth2"
+                root.manager.transition.direction = "right"
+
+<Fourth2Window>:
+    name: "fourth2"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: fourth2_label 
+            text: "Đối với sinh vật"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Đối với sinh quyển"
+            on_release:
+                app.root.current = "fourth3"
+                root.manager.transition.direction = "right"
+
+<Fourth3Window>:
+    name: "fourth3"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: fourth3_label 
+            text: "Đối với sinh quyển"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+
+
+<FifthWindow>:
+    name: "fifth"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Button:
+            text: "Ánh sáng"
+            on_release:
+                app.root.current = "fifth1"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Nồng độ CO2"
+            on_release:
+                app.root.current = "fifth2"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Nhiệt độ"
+            on_release:
+                app.root.current = "fifth3"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            on_release:
+                app.root.current = "fifth4"
+                root.manager.transition.direction = "right"
+
+<Fifth1Window>:
+    name: "fifth1"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        Label:
+            id: fifth1_label 
+            text: "Ánh sáng"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Nồng độ CO2"
+            on_release:
+                app.root.current = "fifth2"
+                root.manager.transition.direction = "right"
+
+<Fifth2Window>:
+    name: "fifth2"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: fourth2_label 
+            text: "Nồng độ CO2"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Nhiệt độ"
+            on_release:
+                app.root.current = "fifth3"
+                root.manager.transition.direction = "right"
+
+<Fifth3Window>:
+    name: "fifth3"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: fifth3_label 
+            text: "Nhiệt độ"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            on_release:
+                app.root.current = "fifth4"
+                root.manager.transition.direction = "right"
+
+<Fifth4Window>:
+    name: "fifth4"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        Label:
+            id: fifth4_label 
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            font_size: 20
+            # Text Properties
+            color: (0,0,0,1)
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+        Button:
+            text: "Trang chủ"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
