@@ -40,7 +40,7 @@ WindowManager:
 
 	    Button:
             text: "Khái quát"
-            background_color: 5, 2, 13, 1
+            background_color: 6, 2, 13, 1
             font_size: 20
             on_release:
 				app.root.current = "second"
@@ -80,11 +80,13 @@ WindowManager:
 
         Button:
             text: "Khái quát"
+            background_color: 255, 0.3, 0.9, 1
             on_release:
                 app.root.current = "second1"
                 root.manager.transition.direction = "right"
         Button:
             text: "Hệ sắc tố quang hợp"
+            background_color: 0, 255, 255, 1
             on_release:
                 app.root.current = "second2"
                 root.manager.transition.direction = "right"
@@ -152,13 +154,13 @@ WindowManager:
 
         Button:
             text: "Pha sáng (Hấp thụ năng lượng ánh sáng)"
-            #size_hint: 0.2,0.2
-            #pos_hint: {"x":0.4, "bottom":1}
+            background_color: 0.5, 1, 0.8, 1
             on_release:
                 app.root.current = "third1"
                 root.manager.transition.direction = "right"
         Button:
             text: "Pha đồng hóa CO2"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "third2"
                 root.manager.transition.direction = "right"
@@ -174,7 +176,7 @@ WindowManager:
 
         Label:
             id: main1_label 
-            text: "- Diễn tra trên màng thylakoid \n- Các sắc tố quang hợp hấp thu năng lượng ánh sáng và truyền năng lượng đó cho phân tử diệp lục a ở trung tâm phản ứng theo sơ đồ: \nCarotenoid --> Diệp lục b --> Diệp lục a --> Diệp lục a ở trung tâm phản ứng \n- Phân tử diệp lục a ở trung tâm phản ứng nhận năng lượng ánh sáng --> Dạng kích thích & truyền electron cho các chất trong chuỗi truyền electron --> NADP+ là chất nhận cuối cùng --> NADPH\n -Tổng hợp ATP từ năng lượng được giải phóng từ chuỗi truyền electron."
+            text: "- Diễn ra trên màng thylakoid \n- Các sắc tố quang hợp hấp thu năng lượng ánh sáng và truyền năng lượng đó cho phân tử diệp lục a ở trung tâm phản ứng theo sơ đồ: \nCarotenoid --> Diệp lục b --> Diệp lục a --> Diệp lục a ở trung tâm phản ứng \n- Phân tử diệp lục a ở trung tâm phản ứng nhận năng lượng ánh sáng --> Dạng kích thích & truyền electron cho các chất trong chuỗi truyền electron --> NADP+ là chất nhận cuối cùng --> NADPH\n -Tổng hợp ATP từ năng lượng được giải phóng từ chuỗi truyền electron."
             font_size: 20
             # Text Properties
             color: (0,0,0,1)
@@ -184,16 +186,20 @@ WindowManager:
             size_hint: 1, 1
         Button:
             text: "Pha đồng hóa CO2"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "third2"
                 root.manager.transition.direction = "right"
 
 <Third2Window>:
     name: "third2"
+
     
     BoxLayout:
         orientation: "vertical"
         size: root.width, root.height
+
+    
 
         padding: 20
         spacing: 40
@@ -210,21 +216,25 @@ WindowManager:
             size_hint: 1, 1
         Button:
             text: "Thực vật C3"
+            background_color: 6, 1.2, 0.2, 1
             on_release:
                 app.root.current = "third11"
                 root.manager.transition.direction = "right"
         Button:
             text: "Thực vật C4"
+            background_color: 0.3, 0.2, 0.8, 1
             on_release:
                 app.root.current = "third12"
                 root.manager.transition.direction = "right"
         Button:
             text: "Thực vật CAM"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "third13"
                 root.manager.transition.direction = "right"
         Button:
             text: "Trang chủ"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
@@ -250,11 +260,13 @@ WindowManager:
             size_hint: 1, 1
         Button:
             text: "Thực vật C4"
+            background_color: 1, 0.4, 1, 1
             on_release:
                 app.root.current = "third12"
                 root.manager.transition.direction = "right"
         Button:
             text: "Trang chủ"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
@@ -277,12 +289,14 @@ WindowManager:
             text_size: self.size
             size_hint: 1, 1
         Button:
+            background_color: 6, 2, 0.8, 1
             text: "Thực vật CAM"
             on_release:
                 app.root.current = "third13"
                 root.manager.transition.direction = "right"
         Button:
             text: "Trang chủ"
+            background_color: 6, 0.8, 0.8, 1
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
@@ -307,6 +321,7 @@ WindowManager:
             size_hint: 1, 1
         Button:
             text: "Trang chủ"
+            background_color: 6, 2, 0.8, 1
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
