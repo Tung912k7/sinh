@@ -62,7 +62,7 @@ kv = Builder.load_file('main.kv')
 
 class MainApp(App):
     def build(self):
-        if(platform == 'android' or platform == 'linux'):
+        if(platform == 'android'):
             Window.maximize()
         else:
             Window.size = (480, 800)
