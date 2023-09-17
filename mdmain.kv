@@ -1,0 +1,501 @@
+ScreenManager:
+    MainScreen:
+
+    SecondScreen:
+    Second1Screen:
+    Second2Screen:
+
+    ThirdScreen:
+    Third1Screen:
+    Third2Screen:
+    Third11Screen:
+    Third12Screen:
+    Third13Screen:
+
+    FourthScreen:
+    Fourth1Screen:
+    Fourth2Screen:
+    Fourth3Screen:
+
+    FifthScreen:
+    Fifth1Screen:
+    Fifth2Screen:
+    Fifth3Screen:
+    Fifth4Screen:
+
+<MainScreen>:
+    name: "main"
+    MDBackdrop:
+
+        MDBackdropBackLayer:
+            Image:
+                back_layer_color: "DeepPurple"
+                source: 'images/back1.png'
+                pos_hint: {'center_x':0.5,'center_y':0.6}
+                allow_stretch: True
+                keep_ratio: True
+
+        MDBackdropFrontLayer:
+            MDBoxLayout:
+                orientation: "vertical"
+                size: root.width, root.height
+
+                padding: 50
+                spacing: 20
+                Image:
+                    source: 'images/giphy.gif'
+                    pos_hint: {'center_x':0.5,'center_y':0.6}
+                    allow_stretch: True
+                    keep_ratio: True
+                MDRectangleFlatIconButton:
+                    text: 'Khái quát'
+                    line_color: "purple"
+                    text_color: "white"
+                    pos_hint: {'center_x':0.5, 'center_y':100}
+                    size_hint: 0.7, None
+                    font_size: 25
+                    on_press: root.manager.current = 'second'
+
+                MDRectangleFlatIconButton:
+                    text: 'Quá trình'
+                    line_color: "purple"
+                    text_color: "white"
+                    pos_hint: {'center_x':0.5}
+                    size_hint: 0.7, None
+                    font_size: 25
+                    on_press: root.manager.current = 'third'
+
+                MDRectangleFlatIconButton:
+                    text: "Vai trò"
+                    line_color: "purple"
+                    text_color: "white"
+                    size_hint: 0.7, None
+                    font_size: 25
+                    pos_hint: {'center_x':0.5}
+                    on_press: root.manager.current = 'fourth'
+                MDRectangleFlatIconButton:
+                    text: "Các yếu tố ảnh hưởng"
+                    line_color: "purple"
+                    text_color: "white"
+                    size_hint: 0.7, None
+                    font_size: 25
+                    pos_hint: {'center_x':0.5}
+                    on_press: root.manager.current = 'fifth'
+
+<SecondScreen>:
+    name: 'second'
+    MDRectangleFlatButton:
+        text: "Khái quát"
+        text_color: "white"
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        line_color: "orange"
+        font_size: 30
+        size_hint: 0.7, None
+        on_press: root.manager.current = 'second1'
+    MDRectangleFlatButton:
+        text: "Hệ sắc tố quang hợp"
+        text_color: "white"
+        line_color: "orange"
+        size_hint: 0.7, None
+        font_size: 30
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.manager.current = 'second2'
+    MDRectangleFlatIconButton:
+        text: "Quay về"
+        text_color: "white"
+        line_color: "orange"
+        icon: "arrow-left-circle"
+        font_size: 30
+        icon_color: "orange"
+        size_hint: 0.7, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        on_press: root.manager.current = 'main'
+
+<Second1Screen>:
+    name: 'second1'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: second1_label
+            text: "- Là quá trình lục lại hấp thụ và sử dụng năng lượng ánh sáng để chuyển hoá CO2 và H2O thành C6H12O6 (Chất hữu cơ), đồng thời giải phóng O2 (NLAS --> NLHH). \n6CO2 + 12H2O --NLAS|Lục lạp--> C6H12O6 + 6H2O"
+            font_size: 20
+            halign: "left"
+            # Text Properties
+            text_color: "white"
+            size_hint: 1, 1
+        MDRectangleFlatButton:
+            text: "Hệ sắc tố quang hợp"
+            text_color: "white"
+            pos_hint: {'center_y':0.1}
+            on_press: root.manager.current = 'second2'
+
+<Second2Screen>:
+    name: 'second2'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: second1_label
+            text: "- Quá trình quang hợp ở thực vật diễn ra chủ yếu ở lục lạp (màu xanh lá). \n- Trung bình mỗi tế bào mô giậu có khoảng 30 – 40 lục lạp, kích thước của lục lạp khoảng 2 – 4 μm x 4 – 7 μm.\n- Hệ sắc tố quang hợp là trung tâm quá trình quang hợp gồm diệp lục a và b (chlorophyll a và b) và carotenoid.\n- Diệp lục a và b chủ yếu hấp thụ ánh sáng ở vùng màu đỏ & xanh tím.\n- Carotenoid thường hấp thụ ánh sáng màu xanh tím và xanh lục."
+            font_size: 20
+            halign: "left"
+            # Text Properties
+            text_color: "white"
+            size_hint: 1, 1
+            pos_hint: {'center_x':0.5,'center_y':0.4}
+        MDRectangleFlatButton:
+            text: "Quay về"
+            text_color: "white"
+            pos_hint: {'center_y':0.1}
+            on_press: root.manager.current = 'main'
+
+<ThirdScreen>:
+    name: 'third'
+    MDRectangleFlatButton:
+        text: "Pha sáng (Hấp thụ năng lượng ánh sáng)"
+        text_color: "white"
+        size_hint: 0.7, None
+        font_size: 20
+        line_color: "orange"
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.manager.current = 'third1'
+    MDRectangleFlatButton:
+        text: "Pha đồng hóa CO2"
+        text_color: "white"
+        size_hint: 0.7, None
+        font_size: 20
+        line_color: "orange"
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.manager.current = 'third2'
+    MDRectangleFlatIconButton:
+        text: "Quay về"
+        text_color: "white"
+        line_color: "orange"
+        icon: "arrow-left-circle"
+        font_size: 20
+        icon_color: "orange"
+        size_hint: 0.7, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        on_press: root.manager.current = 'main'
+
+<Third1Screen>:
+    name: 'third1'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: main1_label
+            text: "- Diễn ra trên màng thylakoid \n- Các sắc tố quang hợp hấp thu năng lượng ánh sáng và truyền năng lượng đó cho phân tử diệp lục a ở trung tâm phản ứng theo sơ đồ: \nCarotenoid --> Diệp lục b --> Diệp lục a --> Diệp lục a ở trung tâm phản ứng \n- Phân tử diệp lục a ở trung tâm phản ứng nhận năng lượng ánh sáng --> Dạng kích thích & truyền electron cho các chất trong chuỗi truyền electron --> NADP+ là chất nhận cuối cùng --> NADPH\n -Tổng hợp ATP từ năng lượng được giải phóng từ chuỗi truyền electron."
+            font_size: 18
+            halign: "left"
+            #Text Properties
+            text_color: "white"
+            size_hint: 1, 1
+        MDRectangleFlatButton:
+            text: "Pha đồng hóa CO2"
+            font_size: 18
+            text_color: "white"
+            pos_hint: {'center_x':0.5}
+            on_press: root.manager.current = 'third2'
+
+<Third2Screen>:
+    name: 'third2'
+    MDBottomNavigation:
+        #panel_color: "#eeeaea"
+        selected_color_background: "orange"
+        text_color_active: "lightgrey"
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            text: "Đồng hoá"
+
+            MDLabel:
+                text: '- Diễn ra ở chất nền lục lạp theo phương trình tổng quát\n 6CO2 + 12NADPH + 18 ATP --> C6H12O6 + 18ADP + 18Pi + 12NADP+ \n - Thực hiên theo các chu trình khác nhau ở 3 nhóm thực vật gồm:'
+                padding: 20
+                font_size: 18
+                halign: 'left'
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: "Thực vật C3"
+
+            MDLabel:
+                text: 'Thực vật C3\n - Là nhóm thực vật gồm phần lớn các loại thực vật phân bố rộng trên thế giới.\n - Là nhóm thực vật cố định CO2 theo chu trình Calvin, sản phẩm ổn định của chu trình là hợp nhất 3 carbonnên được gọi là thực vật C3.\n - Ví dụ: Lúa, khoai tây, đậu và nhiều loại rau có nguồn gốc nhiệt đới'
+                pos_hint: {'center_x':0.5,'center_y':0.7}
+                font_size: 18
+                padding: 20
+                halign: 'left'
+            Image:
+                source: 'images/calvin1.jpg'
+                pos_hint: {'center_x':0.5,'center_y':0.3}
+                allow_stretch: False
+                keep_ratio: True
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: 'Thực vật C4'
+
+            MDLabel:
+                text: 'Thực vật C4\n- Nhóm thực vật sống ở vùng nhiệt đới và cận nhiệt đới.\n- Sống trong điều kiện khô và nóng.\n- Đóng 1 phần khí khổng để hạn chế mất nước, làm giảm lượng CO2 trong tế bào thịt lá.\n- Thích nghi với môi trường hàm lượng CO2 thấp bằng cố định CO2 theo 2 giai đoạn với sự tham gia của 2 loại tế bào khác nhau.\n- Tế bào thịt lá, CO2 được cố định bởi hợp chất phophoenolpyruvate --> oxaloacetate (4C) --> malate --> Tế bào bao bó mạch --> pyruvate và giải phóng CO2 --> Được cố định và chuyển hóa --> Chất hữu cơ theo chu trình Calvin'
+                padding: 20
+                font_size: 18
+                halign: 'left'
+
+        MDBottomNavigationItem:
+            name: 'screen 4'
+            text: 'Thực vật CAM'
+            MDLabel:
+                text: 'Thực vật CAM\n - Là những thực vật mọng nước sống ở vùng sa mạc.\n - Khí khổng đóng vào ban ngày, ban đêm mở để tránh mất nước do quá trình thoát hơi nước. \n ==> Không lấy CO2 vào ban ngày\n - Quá trình cố định giống thực vật C4, nhưng diễn ra trên cùng 1 tế bào ở thời điểm khác nhau. \n - Ban đêm hình thành oxaloacetate, tổng hợp chất hữu cơ vào ban ngày.\n - Ví dụ: Xương rồng, dứa, thanh lòng, ...'
+                padding: 20
+                font_size: 18
+                halign: 'left'
+            MDRectangleFlatButton:
+                text: "Trang chủ"
+                font_size: 18
+                text_color: "white"
+                #padding: 20
+                pos_hint: {'center_x':0.5, 'center_y':0.3}
+                on_press: root.manager.current = 'main'
+
+<FourthScreen>:
+    name: 'fourth'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        MDRectangleFlatButton:
+            text: "Đối với thực vật"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fourth1'
+        MDRectangleFlatButton:
+            text: "Đối với sinh vật"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.4}
+            on_press: root.manager.current = 'fourth2'
+        MDRectangleFlatButton:
+            text: "Đối với sinh vật"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.4}
+            on_press: root.manager.current = 'fourth3'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fourth2Screen>:
+    name: 'fourth2'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: fourth2_label
+            text: "Đối với sinh vật"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            halign: "left"
+            size_hint: 1, 1
+        MDRectangleFlatButton:
+            text: "Đối với sinh quyển"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fourth3'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fourth3Screen>:
+    name: 'fourth3'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: fourth2_label
+            text: "Đối với sinh quyển"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            halign: "left"
+            size_hint: 1, 1
+        MDRectangleFlatButton:
+            text: "Đối với sinh quyển"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fourth2'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+
+<FifthScreen>:
+    name: 'fifth'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        MDRectangleFlatButton:
+            text: "Ánh sáng"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth1'
+        MDRectangleFlatButton:
+            text: "Nồng độ CO2"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth2'
+        MDRectangleFlatButton:
+            text: "Nhiệt độ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth3'
+        MDRectangleFlatButton:
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth4'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fifth1Screen>:
+    name: 'fifth1'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: fourth2_label
+            text: "Ánh sáng"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            halign: "left"
+            size_hint: 1, 1
+        MDRectangleFlatButton:
+            text: "Nồng độ CO2"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth2'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fifth2Screen>:
+    name: 'fifth2'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: fifth2_label
+            text: "Nồng độ CO2"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+        MDRectangleFlatButton:
+            text: "Nhiệt độ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth3'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fifth3Screen>:
+    name: 'fifth3'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 30
+        spacing: 80
+
+        MDLabel:
+            id: fifth2_label
+            text: "Nhiệt độ"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+        MDRectangleFlatButton:
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.5}
+            on_press: root.manager.current = 'fifth4'
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
+<Fifth4Screen>:
+    name: 'fifth4'
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 100
+        spacing: 80
+
+        MDLabel:
+            id: fifth4_label
+            text: "Biện pháp kĩ thuật và công nghệ nâng cao năng suất cây trồng"
+            font_size: 20
+            # Text Properties
+            text_color: "white"
+            bold: True
+            italic: True
+            text_size: self.size
+            size_hint: 1, 1
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+        MDRectangleFlatButton:
+            text: "Trang chủ"
+            text_color: "white"
+            pos_hint: {'center_y':0.5, 'center_y':0.2}
+            on_press: root.manager.current = 'main'
