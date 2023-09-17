@@ -1,3 +1,4 @@
+#:import webbrowser webbrowser
 ScreenManager:
     MainScreen:
 
@@ -28,13 +29,25 @@ ScreenManager:
     MDBackdrop:
 
         MDBackdropBackLayer:
-            Image:
-                back_layer_color: "DeepPurple"
-                source: 'images/back1.png'
-                pos_hint: {'center_x':0.5,'center_y':0.6}
-                allow_stretch: True
-                keep_ratio: True
+            MDFloatLayout:
+                orientation: "vertical"
+                size: root.width, root.height
 
+                #padding: 20
+                #spacing: 20
+                Image:
+                    source: 'images/back1.png'
+                    pos_hint: {'center_x':0.5,'center_y':0.65 }
+                    allow_stretch: False
+                    keep_ratio: True
+                MDFloatingActionButton:
+                    icon: 'play'
+                    icon_color: 'purple'
+                    md_bg_color: 'pink'
+                    icon_size: 30
+                    pos_hint: {'center_x':0.5,'center_y':0.31 }
+                    #size_hint: 0.7, None
+                    on_press: webbrowser.open('https://www.youtube.com/watch?v=lw0lcxUaAqo')
         MDBackdropFrontLayer:
             MDBoxLayout:
                 orientation: "vertical"
@@ -215,11 +228,12 @@ ScreenManager:
     name: 'third2'
     MDBottomNavigation:
         #panel_color: "#eeeaea"
-        selected_color_background: "orange"
-        text_color_active: "lightgrey"
+        selected_color_background:"orange"
+        text_color_active:"pink"
         MDBottomNavigationItem:
             name: 'screen 1'
             text: "Đồng hoá"
+            icon: 'leaf'
 
             MDLabel:
                 text: '- Diễn ra ở chất nền lục lạp theo phương trình tổng quát\n 6CO2 + 12NADPH + 18 ATP --> C6H12O6 + 18ADP + 18Pi + 12NADP+ \n - Thực hiên theo các chu trình khác nhau ở 3 nhóm thực vật gồm:'
@@ -230,6 +244,7 @@ ScreenManager:
         MDBottomNavigationItem:
             name: 'screen 2'
             text: "Thực vật C3"
+            icon: 'leaf-circle'
 
             MDLabel:
                 text: 'Thực vật C3\n - Là nhóm thực vật gồm phần lớn các loại thực vật phân bố rộng trên thế giới.\n - Là nhóm thực vật cố định CO2 theo chu trình Calvin, sản phẩm ổn định của chu trình là hợp nhất 3 carbonnên được gọi là thực vật C3.\n - Ví dụ: Lúa, khoai tây, đậu và nhiều loại rau có nguồn gốc nhiệt đới'
@@ -246,6 +261,7 @@ ScreenManager:
         MDBottomNavigationItem:
             name: 'screen 3'
             text: 'Thực vật C4'
+            icon: 'leaf-circle-outline'
 
             MDLabel:
                 text: 'Thực vật C4\n- Nhóm thực vật sống ở vùng nhiệt đới và cận nhiệt đới.\n- Sống trong điều kiện khô và nóng.\n- Đóng 1 phần khí khổng để hạn chế mất nước, làm giảm lượng CO2 trong tế bào thịt lá.\n- Thích nghi với môi trường hàm lượng CO2 thấp bằng cố định CO2 theo 2 giai đoạn với sự tham gia của 2 loại tế bào khác nhau.\n- Tế bào thịt lá, CO2 được cố định bởi hợp chất phophoenolpyruvate --> oxaloacetate (4C) --> malate --> Tế bào bao bó mạch --> pyruvate và giải phóng CO2 --> Được cố định và chuyển hóa --> Chất hữu cơ theo chu trình Calvin'
@@ -256,6 +272,7 @@ ScreenManager:
         MDBottomNavigationItem:
             name: 'screen 4'
             text: 'Thực vật CAM'
+            icon: 'leaf-maple'
             MDLabel:
                 text: 'Thực vật CAM\n - Là những thực vật mọng nước sống ở vùng sa mạc.\n - Khí khổng đóng vào ban ngày, ban đêm mở để tránh mất nước do quá trình thoát hơi nước. \n ==> Không lấy CO2 vào ban ngày\n - Quá trình cố định giống thực vật C4, nhưng diễn ra trên cùng 1 tế bào ở thời điểm khác nhau. \n - Ban đêm hình thành oxaloacetate, tổng hợp chất hữu cơ vào ban ngày.\n - Ví dụ: Xương rồng, dứa, thanh lòng, ...'
                 padding: 20
@@ -268,6 +285,7 @@ ScreenManager:
                 #padding: 20
                 pos_hint: {'center_x':0.5, 'center_y':0.3}
                 on_press: root.manager.current = 'main'
+
 
 <FourthScreen>:
     name: 'fourth'
