@@ -3,9 +3,7 @@ from kivy.core.window import Window
 from kivymd.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivymd.uix.button import MDIconButton
-
-Window.size = (480, 800)
+from kivy.utils import platform
 
 
 class MainScreen(Screen):
@@ -87,11 +85,15 @@ class Fifth4Screen(Screen):
 class App(MDApp):
     def build(self):
         self.icon = "images/icon.png"
+        if platform == "android" or platform == "win" or platform == "linux":
+            Window.maximize()
+        else:
+            Window.size = (480, 800)
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Indigo"
         self.theme_cls.accent_palette = "Red"
         screen = Screen()
-        screen = Builder.load_file("mdmain.kv")
+        screen = Builder.load_file("mdmain - Copy.kv")
         return screen
 
 
