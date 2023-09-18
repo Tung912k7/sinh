@@ -24,6 +24,7 @@ ScreenManager:
     Fifth3Screen:
     Fifth4Screen:
 
+
 <MainScreen>:
     name: "main"
     MDBackdrop:
@@ -33,21 +34,19 @@ ScreenManager:
                 orientation: "vertical"
                 size: root.width, root.height
 
-                #padding: 20
-                #spacing: 20
-                Image:
-                    source: 'images/back1.png'
-                    pos_hint: {'center_x':0.5,'center_y':0.65 }
-                    allow_stretch: False
-                    keep_ratio: True
-                MDFloatingActionButton:
-                    icon: 'play'
-                    icon_color: 'purple'
-                    md_bg_color: 'pink'
-                    icon_size: 30
-                    pos_hint: {'center_x':0.5,'center_y':0.31 }
-                    #size_hint: 0.7, None
-                    on_press: webbrowser.open('https://www.youtube.com/watch?v=lw0lcxUaAqo')
+                MDIconButton:
+                    icon: 'account-group'
+                    icon_color: 'cyan'
+                    icon_size: "80sp"
+                    pos_hint: {'center_x':0.5, 'center_y':0.75}
+                MDLabel:
+                    text: "Nhóm 3\nNguyễn Đức Thanh Tùng\nHoàng Vân Khánh\nLê Đức Hiếu\nTrương Đức Duy\nVõ Nhật Minh\nĐặng Khôi Nguyên\nNguyễn Đúc Tú\nTrương Thanh Sơn"
+                    bold: True
+                    halign: "center"
+                    color: 1, 1, 1, 1
+                    font_size: 40
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": 0.5, "center_y": 0.46}
         MDBackdropFrontLayer:
             MDBoxLayout:
                 orientation: "vertical"
@@ -65,8 +64,8 @@ ScreenManager:
                     line_color: "purple"
                     text_color: "white"
                     pos_hint: {'center_x':0.5, 'center_y':100}
-                    size_hint: 0.7, None
-                    font_size: 25
+                    size_hint: 0.8, 0.2
+                    font_size: 50
                     on_press: root.manager.current = 'second'
 
                 MDRectangleFlatIconButton:
@@ -74,24 +73,24 @@ ScreenManager:
                     line_color: "purple"
                     text_color: "white"
                     pos_hint: {'center_x':0.5}
-                    size_hint: 0.7, None
-                    font_size: 25
+                    size_hint: 0.8, 0.2
+                    font_size: 50
                     on_press: root.manager.current = 'third'
 
                 MDRectangleFlatIconButton:
                     text: "Vai trò"
                     line_color: "purple"
                     text_color: "white"
-                    size_hint: 0.7, None
-                    font_size: 25
+                    size_hint: 0.8, 0.2
+                    font_size: 50
                     pos_hint: {'center_x':0.5}
                     on_press: root.manager.current = 'fourth'
                 MDRectangleFlatIconButton:
                     text: "Các yếu tố ảnh hưởng"
                     line_color: "purple"
                     text_color: "white"
-                    size_hint: 0.7, None
-                    font_size: 25
+                    size_hint: 0.8, 0.2
+                    font_size: 50
                     pos_hint: {'center_x':0.5}
                     on_press: root.manager.current = 'fifth'
 
@@ -149,7 +148,7 @@ ScreenManager:
 
 <Second2Screen>:
     name: 'second2'
-    BoxLayout:
+    MDBoxLayout:
         orientation: "vertical"
         size: root.width, root.height
 
@@ -176,16 +175,16 @@ ScreenManager:
     MDRectangleFlatButton:
         text: "Pha sáng (Hấp thụ năng lượng ánh sáng)"
         text_color: "white"
-        size_hint: 0.7, None
-        font_size: 20
+        size_hint: 0.7, 0.1
+        font_size: 40
         line_color: "orange"
-        pos_hint: {'center_x':0.5,'center_y':0.6}
+        pos_hint: {'center_x':0.5,'center_y':0.7}
         on_press: root.manager.current = 'third1'
     MDRectangleFlatButton:
         text: "Pha đồng hóa CO2"
         text_color: "white"
-        size_hint: 0.7, None
-        font_size: 20
+        size_hint: 0.7, 0.1
+        font_size: 40
         line_color: "orange"
         pos_hint: {'center_x':0.5,'center_y':0.5}
         on_press: root.manager.current = 'third2'
@@ -194,36 +193,71 @@ ScreenManager:
         text_color: "white"
         line_color: "orange"
         icon: "arrow-left-circle"
-        font_size: 20
+        font_size: 40
         icon_color: "orange"
-        size_hint: 0.7, None
-        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        size_hint: 0.7, 0.1
+        pos_hint: {"center_x": 0.5, "center_y": 0.3}
         on_press: root.manager.current = 'main'
 
 <Third1Screen>:
     name: 'third1'
-    BoxLayout:
-        orientation: "vertical"
-        size: root.width, root.height
-
-        padding: 30
-        spacing: 80
-
-        MDLabel:
-            id: main1_label
-            text: "- Diễn ra trên màng thylakoid \n- Các sắc tố quang hợp hấp thu năng lượng ánh sáng và truyền năng lượng đó cho phân tử diệp lục a ở trung tâm phản ứng theo sơ đồ: \nCarotenoid --> Diệp lục b --> Diệp lục a --> Diệp lục a ở trung tâm phản ứng \n- Phân tử diệp lục a ở trung tâm phản ứng nhận năng lượng ánh sáng --> Dạng kích thích & truyền electron cho các chất trong chuỗi truyền electron --> NADP+ là chất nhận cuối cùng --> NADPH\n -Tổng hợp ATP từ năng lượng được giải phóng từ chuỗi truyền electron."
-            font_size: 18
-            halign: "left"
-            #Text Properties
-            text_color: "white"
-            size_hint: 1, 1
-        MDRectangleFlatButton:
-            text: "Pha đồng hóa CO2"
-            font_size: 18
-            text_color: "white"
-            pos_hint: {'center_x':0.5}
-            on_press: root.manager.current = 'third2'
-
+    MDBottomNavigation:
+    #panel_color: "#eeeaea"
+        selected_color_background:"orange"
+        text_color_active:"pink"
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            text: 'Tổng quan'
+            icon: 'weather-sunny'
+            MDIconButton:
+                icon: 'google-play'
+                icon_color: 'purple'
+                md_bg_color: 'purple'
+                pos_hint: {'center_x':0.6,'center_y':0.57}
+                size_hint: 0.1, 0.1
+                on_press: webbrowser.open('http://bit.ly/wibuchua')
+            MDLabel:
+                text: '- Diễn ra trên màng thylakoid \n- Nguyên liệu: H2O, NADP+, ADP, Pi \n- Sản phẩm: O2, NADPH, ATP\n- Phương trình tổng quát:\nH2O + NADP+ + ADP + Pi --> O2 + NADPH + ATP'
+                padding: 20
+                font_size: 30
+                halign: 'left'
+                pos_hint: {'center_x':0.5,'center_y':0.5}
+            MDIconButton:
+                icon: 'home-circle'
+                md_bg_color: 'cyan'
+                icon_color: 'cyan'
+                size_hint: 0.1, 0.1
+                pos_hint: {'center_x':0.6, 'center_y':0.44}
+                on_press: root.manager.current = 'main'
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: 'Pha sáng'
+            icon: 'connection'
+            Image:
+                source: 'images/calvin1.jpg'
+                pos_hint: {'center_x':0.7,'center_y':0.5}
+                allow_stretch: False
+                keep_ratio: True
+            MDLabel:
+                text: '==> Pha sáng & pha tối có quan hệ mật thiết'
+                padding: 20
+                font_size: 30
+                halign: 'left'
+                pos_hint: {'center_x':0.5,'center_y':0.5}
+            MDRectangleFlatButton:
+                text: "Pha đồng hóa CO2"
+                font_size: 18
+                line_color: 'lime'
+                text_color: "white"
+                pos_hint: {'center_x':0.2, 'center_y':0.4}
+                on_press: root.manager.current = 'third2'
+            MDRectangleFlatButton:
+                text: "Trang chủ"
+                font_size: 18
+                line_color: 'lime'
+                text_color: "white"
+                pos_hint: {'center_x':0.2, 'center_y':0.35}
+                on_press: root.manager.current = 'main'
 <Third2Screen>:
     name: 'third2'
     MDBottomNavigation:
@@ -232,14 +266,44 @@ ScreenManager:
         text_color_active:"pink"
         MDBottomNavigationItem:
             name: 'screen 1'
-            text: "Đồng hoá"
+            text: "Hình ảnh"
             icon: 'leaf'
-
-            MDLabel:
-                text: '- Diễn ra ở chất nền lục lạp theo phương trình tổng quát\n 6CO2 + 12NADPH + 18 ATP --> C6H12O6 + 18ADP + 18Pi + 12NADP+ \n - Thực hiên theo các chu trình khác nhau ở 3 nhóm thực vật gồm:'
-                padding: 20
-                font_size: 18
-                halign: 'left'
+            MDSwiper:
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/corn1.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/sugarcane.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/rauden.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/cactus.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/orange.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/lime.png"
+                        radius: [20,20]
+                MDSwiperItem:
+                    FitImage:
+                        source:"images/jack.png"
+                        radius: [20,20]
+            MDIconButton:
+                icon: 'home-circle'
+                icon_color: 'purple'
+                size_hint: 0.04, 0.04
+                pos_hint: {'center_x':0.5, 'center_y':0.1}
+                md_bg_color: 'purple'
+                on_press: root.manager.current = 'main'
 
         MDBottomNavigationItem:
             name: 'screen 2'
@@ -247,14 +311,21 @@ ScreenManager:
             icon: 'leaf-circle'
 
             MDLabel:
-                text: 'Thực vật C3\n - Là nhóm thực vật gồm phần lớn các loại thực vật phân bố rộng trên thế giới.\n - Là nhóm thực vật cố định CO2 theo chu trình Calvin, sản phẩm ổn định của chu trình là hợp nhất 3 carbonnên được gọi là thực vật C3.\n - Ví dụ: Lúa, khoai tây, đậu và nhiều loại rau có nguồn gốc nhiệt đới'
-                pos_hint: {'center_x':0.5,'center_y':0.7}
-                font_size: 18
+                text: '- Hầu hết các loài thực vật thích nghi với điều kiện khí hậu\n ôn đới, ôn hoà\n- Chu trình Calvin - Benson (3 giai đoạn)'
+                pos_hint: {'center_x':0.5,'center_y':0.5}
+                font_size: 30
                 padding: 20
                 halign: 'left'
+            MDRoundFlatButton:
+                text: "Trang chủ"
+                font_size: 30
+                text_color: "white"
+                #padding: 20
+                pos_hint: {'center_x':0.18, 'center_y':0.4}
+                on_press: root.manager.current = 'main'
             Image:
-                source: 'images/calvin1.jpg'
-                pos_hint: {'center_x':0.5,'center_y':0.3}
+                source: 'images/c3.jpg'
+                pos_hint: {'center_x':0.7,'center_y':0.5}
                 allow_stretch: False
                 keep_ratio: True
 
@@ -262,28 +333,48 @@ ScreenManager:
             name: 'screen 3'
             text: 'Thực vật C4'
             icon: 'leaf-circle-outline'
-
+            spacing: 30
             MDLabel:
-                text: 'Thực vật C4\n- Nhóm thực vật sống ở vùng nhiệt đới và cận nhiệt đới.\n- Sống trong điều kiện khô và nóng.\n- Đóng 1 phần khí khổng để hạn chế mất nước, làm giảm lượng CO2 trong tế bào thịt lá.\n- Thích nghi với môi trường hàm lượng CO2 thấp bằng cố định CO2 theo 2 giai đoạn với sự tham gia của 2 loại tế bào khác nhau.\n- Tế bào thịt lá, CO2 được cố định bởi hợp chất phophoenolpyruvate --> oxaloacetate (4C) --> malate --> Tế bào bao bó mạch --> pyruvate và giải phóng CO2 --> Được cố định và chuyển hóa --> Chất hữu cơ theo chu trình Calvin'
+                text: '- Thích nghi với điều kiện nhiệt đới nắng nóng & cường độ ánh sáng cao\n => Phải đống 1 phần khí khổng để hạn chế mất nước => Hàm lượng CO2 thấp => Chu trình Calvin diễn ra ở tế bào bó mạnh (tránh ánh sáng mạnh, nhiệt độ cao)'
                 padding: 20
-                font_size: 18
+                font_size: 30
+                pos_hint: {'center_x':0.5,'center_y':0.9}
                 halign: 'left'
+            MDRoundFlatButton:
+                text: "Trang chủ"
+                font_size: 18
+                text_color: "white"
+                #padding: 20
+                pos_hint: {'center_x':0.5, 'center_y':0.81}
+                on_press: root.manager.current = 'main'
+            Image:
+                source: 'images/c4.jpg'
+                pos_hint: {'center_x':0.5,'center_y':0.38}
+                allow_stretch: True
+                keep_ratio: True
 
         MDBottomNavigationItem:
             name: 'screen 4'
             text: 'Thực vật CAM'
             icon: 'leaf-maple'
             MDLabel:
-                text: 'Thực vật CAM\n - Là những thực vật mọng nước sống ở vùng sa mạc.\n - Khí khổng đóng vào ban ngày, ban đêm mở để tránh mất nước do quá trình thoát hơi nước. \n ==> Không lấy CO2 vào ban ngày\n - Quá trình cố định giống thực vật C4, nhưng diễn ra trên cùng 1 tế bào ở thời điểm khác nhau. \n - Ban đêm hình thành oxaloacetate, tổng hợp chất hữu cơ vào ban ngày.\n - Ví dụ: Xương rồng, dứa, thanh lòng, ...'
+                text: '- Thích nghi với điều kiện sa mạc khô hạn => Khí khổng luôn đóng vào \nban ngày, ban đêm mở ra để lấy CO2\n- Cơ chế đồng hoá CO2 giống chu trình Calvin nhưng khác về\n thời gian và nơi diễn ra'
                 padding: 20
-                font_size: 18
+                pos_hint: {'center_x':0.5,'center_y':0.5}
+                font_size: 30
                 halign: 'left'
-            MDRectangleFlatButton:
+            Image:
+                source: 'images/CAM.jpg'
+                pos_hint: {'center_x':0.75,'center_y':0.5}
+                allow_stretch: False
+                keep_ratio: True
+
+            MDRoundFlatButton:
                 text: "Trang chủ"
                 font_size: 18
                 text_color: "white"
                 #padding: 20
-                pos_hint: {'center_x':0.5, 'center_y':0.3}
+                pos_hint: {'center_x':0.2, 'center_y':0.38}
                 on_press: root.manager.current = 'main'
 
 
